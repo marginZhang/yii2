@@ -89,6 +89,12 @@ $query->select(['user_id' => 'user.id', 'email']);
 $query->select(["CONCAT(first_name, ' ', last_name) AS full_name", 'email']); 
 ```
 
+如果想让某字段查询结果显示为固定值时，需使用concat。
+
+```php
+$query->select(["CONCAT('******') AS password", 'username']); 
+```
+
 与所有涉及原始 SQL 的地方一样，当在 select 中编写 DB 表达式时，可以对表名和列名使用
 [与 DBMS 无关的引用语法](db-dao.md#quoting-table-and-column-names)。
 
